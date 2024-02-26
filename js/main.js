@@ -17,12 +17,12 @@ arrowCatalog.addEventListener("click", function () {
   catalogElement.classList.toggle("open");
 });
 
-//click subMenu catalog
-for (let i = 0; i < clickElementMenu.length; i++) {
-  clickElementMenu[i].addEventListener("click", function () {
-    this.classList.toggle("open-sub-menu");
-    //subCatalogMenu[i].classList.toggle("open-sub-sub-menu");
-    const nextEl = clickElementMenu[i].nextElementSibling;
-    nextEl.classList.toggle("open-sub-sub-menu");
-  });
-}
+////click subMenu catalog
+//for (let i = 0; i < clickElementMenu.length; i++) {
+//  clickElementMenu[i].addEventListener("click", function () {
+//    this.classList.toggle("open-sub-menu");
+//    //subCatalogMenu[i].classList.toggle("open-sub-sub-menu");
+//    const nextEl = clickElementMenu[i].nextElementSibling;
+//    nextEl.classList.toggle("open-sub-sub-menu");
+//  });
+//}
