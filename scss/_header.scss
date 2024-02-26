@@ -1,0 +1,479 @@
+.header {
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    z-index: 2;
+  }
+  .header__top {
+    background-color: #f2f3f4;
+    padding: 5px 0;
+    border-bottom: 2px dashed rgb(110, 114, 132);
+  }
+  .header-top {
+    &__items {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__location {
+      display: flex;
+      flex-direction: row-reverse;
+      column-gap: 10px;
+    }
+    &__icon {
+      width: 5px;
+      height: 10px;
+      color: blue;
+    }
+    .material-symbols-outlined {
+      font-size: 14px;
+    }
+    &__city {
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 16px;
+      position: relative;
+      color: rgb(110, 114, 132);
+    }
+
+    &__menu {
+    }
+
+    &__list {
+      display: flex;
+      gap: 10px 20px;
+    }
+
+    &__element {
+    }
+
+    &__link {
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 16px;
+      vertical-align: middle;
+      transition: all 1s ease;
+      color: rgb(110, 114, 132);
+      &:hover {
+        color: #f04716;
+        text-shadow: 0px 0px 2px #f04716;
+      }
+    }
+
+    &__phones {
+      display: flex;
+      align-items: center;
+      gap: 10px 20px;
+    }
+    &__phones > :first-child {
+      margin-right: -15px;
+    }
+    &__number {
+      color: rgb(54, 56, 63);
+      font-size: 15px;
+      font-weight: 500;
+      font-family: Montserrat;
+    }
+    &__clock {
+      color: rgb(10, 78, 203);
+    }
+    &__get {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgb(71, 136, 255);
+    }
+  }
+  //-------------------------------------
+  .header-center {
+    padding-top: 40px;
+    &__items {
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+    }
+    .container {
+      position: relative;
+    }
+    &__item {
+      &:first-child {
+        flex: 0 1 25%;
+      }
+      &:last-child {
+        flex: 1 1 75%;
+        display: flex;
+        justify-content: end;
+        column-gap: 10px;
+      }
+    }
+
+    &__logo {
+      position: relative;
+      z-index: 3;
+      img {
+        max-width: 100%;
+      }
+    }
+
+    &__input {
+      display: flex;
+      flex: 0 1 520px;
+    }
+
+    &__search {
+      height: 45px;
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid rgb(222, 223, 231);
+      border-radius: 12px;
+      outline: none;
+      padding-left: 15px;
+      &::placeholder {
+        padding-left: 30px;
+      }
+      background: url("../img/header/search.png") no-repeat 15px;
+      &:focus {
+        background: none;
+      }
+    }
+
+    &__likes {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      min-width: 45px;
+      height: 45px;
+      border: none;
+      background: rgb(255, 255, 255);
+      border-radius: 12px;
+      border: 1px solid rgb(222, 223, 231);
+    }
+
+    &__diagram {
+      border: 1px solid rgb(222, 223, 231);
+      border-radius: 12px;
+      background: rgb(255, 255, 255);
+      min-width: 45px;
+      height: 45px;
+      position: relative;
+      padding: 0;
+
+      span {
+        position: absolute;
+        width: 6px;
+        height: 9px;
+        left: 9px;
+        top: 21px;
+        border: 1px solid rgb(110, 114, 132);
+        border-radius: 5px;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 6px;
+          height: 14px;
+          left: 18px;
+          bottom: -1px;
+          border: 1px solid rgb(110, 114, 132);
+          border-radius: 5px;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          width: 6px;
+          height: 20px;
+          border: 1px solid rgb(110, 114, 132);
+          border-radius: 5px;
+          left: 8px;
+          bottom: -1px;
+        }
+      }
+    }
+
+    &__shopping {
+      height: 45px;
+      padding: 0 15px;
+      box-sizing: border-box;
+      border-radius: 12px;
+      border: 1px solid rgb(222, 223, 231);
+      background: rgb(255, 255, 255);
+      color: rgb(110, 114, 132);
+      font-family: Montserrat;
+      font-size: 13px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      column-gap: 10px;
+      min-width: 140px;
+    }
+    &__burger {
+      z-index: 3;
+      display: none;
+      position: absolute;
+      right: 40px;
+      top: 0;
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgb(222, 223, 231);
+      border-radius: 12px;
+      span {
+        position: absolute;
+        width: 16px;
+        height: 1px;
+        left: 12px;
+        top: 13px;
+        border-radius: 2px;
+        background: rgb(10, 78, 203);
+        &::before {
+          content: "";
+          position: absolute;
+          width: 16px;
+          height: 1px;
+          left: 0;
+          bottom: -5px;
+          border-radius: 2px;
+          background: rgb(10, 78, 203);
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          width: 16px;
+          height: 1px;
+          left: 0;
+          top: 10px;
+          border-radius: 2px;
+          background: rgb(10, 78, 203);
+        }
+      }
+    }
+    .header-center-mobile {
+      position: fixed;
+      display: none;
+      height: 535px;
+      width: 100%;
+      left: 0;
+      top: -620px;
+      margin-top: 80px;
+      background: rgb(29, 30, 34);
+      transition: all 1s ease;
+      z-index: 1;
+      &__link {
+        color: rgb(222, 223, 231);
+        font-family: Montserrat;
+        font-size: 15px;
+        font-weight: 400;
+      }
+      &__menu {
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-top: 20px;
+      }
+      &__element {
+        padding-bottom: 20px;
+      }
+      &__element:nth-child(8) {
+        padding-top: 20px;
+        border-top: 1px solid rgb(54, 56, 63);
+      }
+      &__element:nth-child(10) {
+        padding-top: 20px;
+        border-top: 1px solid rgb(54, 56, 63);
+      }
+    }
+    .header-center-mobile.active {
+      top: 0;
+    }
+  }
+
+  //------------------------------
+
+  .header-bottom {
+    height: 50px;
+    background: rgb(10, 78, 203);
+    margin-top: 40px;
+    &__items {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 50px;
+    }
+    &__item {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+    &__catalogs {
+      padding-left: 30px;
+    }
+
+    .catalog {
+      position: relative;
+      padding-right: 16px;
+      white-space: nowrap;
+      &__btn {
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 16px;
+        color: #fff;
+        transition: transform 0.3s ease;
+      }
+      &__burger {
+        cursor: pointer;
+        position: absolute;
+        left: -15px;
+        top: 5px;
+        width: 10px;
+        height: 16px;
+        span {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 1px;
+          background-color: rgb(255, 255, 255);
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 4px;
+            width: 100%;
+            height: 1px;
+            background-color: rgb(255, 255, 255);
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            width: 100%;
+            height: 1px;
+            background-color: rgb(255, 255, 255);
+          }
+        }
+      }
+      &__menu {
+        box-sizing: border-box;
+        padding-top: 20px;
+        visibility: hidden;
+        position: absolute;
+        left: -16px;
+        top: 33px;
+        height: 590px;
+        width: 280px;
+        background: rgb(29, 30, 34);
+      }
+      &__link {
+        color: #fff;
+        font-size: 15px;
+        font-weight: 400;
+        padding-left: 20px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      &__element {
+        height: 40px;
+        position: relative;
+        cursor: pointer;
+        transition: height 2s ease;
+        &:hover {
+          height: 10%;
+          background: linear-gradient(
+            90deg,
+            rgb(29, 30, 34),
+            rgb(10, 78, 203) 103.704%
+          );
+        }
+      }
+      &__arrow-1 {
+        color: #fff;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        font-size: 20px;
+        transform: translateY(-50%) rotate(-90deg);
+      }
+      .open-sub-menu {
+        right: 15px;
+      }
+      .catalog-menu-sub {
+        display: none;
+        padding-top: 20px;
+        position: absolute;
+        width: 320px;
+        height: 590px;
+        right: -320px;
+        top: -20px;
+        background: rgb(54, 56, 63);
+        &__element {
+          height: 40px;
+          position: relative;
+          cursor: pointer;
+          transition: height 2s ease;
+          &:hover {
+            height: 10%;
+            background: linear-gradient(
+              90deg,
+              rgb(29, 30, 34),
+              rgb(10, 78, 203) 103.704%
+            );
+          }
+        }
+
+        &__link {
+          color: #fff;
+          font-size: 15px;
+          font-weight: 400;
+          padding-left: 20px;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+      .open-sub-sub-menu {
+        display: block;
+      }
+    }
+
+    .catalog.open .catalog__btn {
+      transform: rotate(180deg);
+    }
+    .catalog.open .catalog__menu {
+      visibility: visible;
+      transition: all 1s ease;
+    }
+    &__menu {
+      display: flex;
+      column-gap: 50px;
+    }
+
+    &__element {
+    }
+
+    &__link {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    &__products {
+    }
+
+    &__discount {
+      display: flex;
+      justify-content: end;
+    }
+
+    &__link-discount {
+      font-size: 14px;
+      font-weight: 500;
+      color: #fffa2f;
+    }
+  }
+}
