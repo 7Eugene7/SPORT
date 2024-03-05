@@ -1,3 +1,34 @@
+@media (max-width: 1220px) {
+  .header {
+    .header-bottom {
+      .catalog {
+        .catalog-menu-sub-sub {
+          max-width: 370px;
+          padding: 35px 20px 0 20px;
+          &__title {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 992px) {
+  .header {
+    .header-bottom {
+      .catalog {
+        &__element:hover .catalog-menu-sub {
+          display: block;
+        }
+        .catalog-menu-sub {
+          &__element:hover .catalog-menu-sub-sub {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
 @media (max-width: 992px) {
   .header {
     .header-top {
@@ -21,6 +52,26 @@
       }
       &__item {
         flex: 0 1 33.333%;
+      }
+      .catalog {
+        .catalog-menu-sub-sub {
+          left: 0;
+          &__btn {
+            display: block;
+          }
+          &__title {
+            font-size: 20px;
+          }
+        }
+        .catalog-menu-sub.visible {
+          display: block;
+        }
+        .catalog-menu-sub-sub {
+          z-index: 2;
+        }
+        .catalog-menu-sub-sub.visible {
+          display: block;
+        }
       }
     }
   }
@@ -54,15 +105,47 @@
       }
       &__item {
         flex: 1 1 100%;
-        justify-content: center;
         white-space: nowrap;
       }
-      
+
       &__item:nth-child(2) {
         display: none;
       }
       &__item:nth-child(3) {
         display: none;
+      }
+      .catalog {
+        &__element:hover {
+          .catalog__arrow-1 {
+            right: 60px;
+          }
+        }
+        &__menu {
+          left: -45px;
+          width: 375px;
+          padding-left: 70px;
+        }
+        &__arrow-1 {
+          right: 70px;
+        }
+        .catalog-menu-sub {
+          z-index: 1;
+          width: 335px;
+          right: 0;
+          &__btn {
+            display: block;
+          }
+          &__element {
+            &:hover {
+              .catalog__arrow-1 {
+                right: 15px;
+              }
+            }
+          }
+          .catalog__arrow-1 {
+            right: 35px;
+          }
+        }
       }
     }
   }

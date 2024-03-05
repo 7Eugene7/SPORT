@@ -392,9 +392,6 @@
         }
       }
       &__element:hover {
-        .catalog-menu-sub {
-          display: block;
-        }
         .catalog__arrow-1 {
           right: 15px;
         }
@@ -420,6 +417,7 @@
         right: 15px;
       }
       .catalog-menu-sub {
+        z-index: 1;
         display: none;
         box-sizing: border-box;
         padding-top: 20px;
@@ -441,11 +439,18 @@
               rgb(10, 78, 203) 103.704%
             );
           }
-          &:hover .catalog-menu-sub-sub {
-            display: block;
-          }
         }
-
+        &__btn {
+          display: none;
+          position: absolute;
+          left: -40px;
+          top: 0;
+          width: 40px;
+          height: 40px;
+        }
+        &__arrow {
+          transform: rotate(90deg);
+        }
         &__link {
           color: #fff;
           font-size: 15px;
@@ -493,7 +498,9 @@
           transform: rotate(-90deg) translate(10px, 10px) translateY(-50%);
           font-size: 20px;
         }
-
+        &__btn {
+          //display: none;
+        }
         &__link {
           position: relative;
 
