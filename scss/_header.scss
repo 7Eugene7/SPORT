@@ -7,7 +7,7 @@
     width: 100%;
     height: auto;
     background-color: #fff;
-    z-index: 2;
+    z-index: 3;
   }
   .header__top {
     background-color: #f2f3f4;
@@ -41,15 +41,9 @@
       color: rgb(110, 114, 132);
     }
 
-    &__menu {
-    }
-
     &__list {
       display: flex;
       gap: 10px 20px;
-    }
-
-    &__element {
     }
 
     &__link {
@@ -115,7 +109,8 @@
       position: relative;
       z-index: 3;
       img {
-        max-width: 100%;
+        width: 220px;
+        height: 50px;
       }
     }
 
@@ -260,7 +255,7 @@
       margin-top: 80px;
       background: rgb(29, 30, 34);
       transition: all 1s ease;
-      z-index: 1;
+      z-index: 2;
       &__link {
         color: rgb(222, 223, 231);
         font-family: Montserrat;
@@ -293,13 +288,18 @@
 
   .header-bottom {
     height: 50px;
-    background: rgb(10, 78, 203);
     margin-top: 40px;
+    position: relative;
+    background: rgb(10, 78, 203);
+
     &__items {
       display: flex;
       align-items: center;
       justify-content: space-between;
       height: 50px;
+    }
+    &__menu {
+      align-items: center;
     }
     &__item {
       height: 100%;
@@ -367,6 +367,7 @@
         height: 590px;
         width: 280px;
         background: rgb(29, 30, 34);
+        z-index: 2;
       }
       &__link {
         color: #fff;
@@ -376,6 +377,17 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
+      }
+
+      .header-bottom-link {
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: -20px;
+          left: 0;
+          right: 0;
+        }
       }
       &__element {
         height: 40px;
@@ -495,14 +507,18 @@
           position: absolute;
           top: 50%;
           right: -20px;
-          transform: rotate(-90deg) translate(10px, 10px) translateY(-50%);
+          transform: rotate(-90deg) translate(8px, 10px) translateY(-50%);
           font-size: 20px;
         }
         &__btn {
-          //display: none;
+          display: none;
         }
         &__link {
           position: relative;
+          font-size: 15px;
+          font-weight: 400;
+          line-height: 34px;
+          color: rgb(110, 114, 132);
 
           &:hover {
             color: #0a4ecb;
@@ -516,12 +532,11 @@
       }
     }
 
-    .catalog.open .catalog__btn {
-      transform: rotate(180deg);
-    }
     .catalog.open .catalog__menu {
       visibility: visible;
-      transition: all 1s ease;
+    }
+    .catalog.open .catalog__btn {
+      transform: rotate(180deg);
     }
     &__menu {
       display: flex;

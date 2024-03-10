@@ -1,3 +1,4 @@
+const body = document.querySelector("body");
 const burger = document.querySelector(".header-center__burger");
 const burgerMenu = document.querySelector(".header-center-mobile");
 const arrowCatalog = document.querySelector(".catalog__btn");
@@ -6,6 +7,7 @@ const catalogElem = document.querySelectorAll(".catalog__element");
 const clickElementMenu = document.querySelectorAll(".catalog__arrow-1");
 const catalogMenu = document.querySelector(".catalog-menu");
 const subCatalogMenu = document.querySelector(".catalog-menu-sub");
+const headerBottomCatalogLink = document.querySelector(".header-bottom__link");
 const catalogMenuSubEl = document.querySelectorAll(
   ".catalog-menu-sub__element"
 );
@@ -18,6 +20,7 @@ const btnSubMenu = document.querySelector(".catalog-menu-sub__btn");
 burger.addEventListener("click", function () {
   burger.classList.toggle("open");
   burgerMenu.classList.toggle("active");
+  body.classList.toggle("hidden");
 });
 
 //click arrow Catalog
@@ -72,3 +75,15 @@ function allBlocksSubMenu() {
     }
   }
 }
+
+//------------- SWIPER BANNER-------------
+const swiper = new Swiper(".swiper", {
+  pagination: {
+    el: ".swiper-pagination",
+    type: "fraction",
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});
