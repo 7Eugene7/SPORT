@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html,
 body,
 div,
@@ -144,6 +145,7 @@ button {
 
 body {
   font-family: "Montserrat", sans-serif;
+  background: #f2f3f4;
 }
 
 .container {
@@ -156,6 +158,9 @@ body {
   margin-top: 20px;
 }
 
+.header {
+  background-color: #fff;
+}
 .header::before {
   content: "";
   position: absolute;
@@ -455,6 +460,12 @@ body {
 .header .header-bottom__catalogs {
   padding-left: 30px;
 }
+.header .header-bottom__link, .header .header-bottom__link-discount {
+  transition: all 1s ease;
+}
+.header .header-bottom__link:hover, .header .header-bottom__link-discount:hover {
+  opacity: 0.9;
+}
 .header .header-bottom .catalog {
   position: relative;
   padding-right: 16px;
@@ -489,7 +500,7 @@ body {
   content: "";
   position: absolute;
   left: 0;
-  top: 4px;
+  top: 6px;
   width: 100%;
   height: 1px;
   background-color: rgb(255, 255, 255);
@@ -498,7 +509,7 @@ body {
   content: "";
   position: absolute;
   left: 0;
-  top: 2px;
+  top: 3px;
   width: 100%;
   height: 1px;
   background-color: rgb(255, 255, 255);
@@ -1664,7 +1675,127 @@ button.swiper-pagination-bullet {
   overflow: hidden;
 }
 
-@media (max-width: 1210px) {
+.walls {
+  padding-top: 60px;
+}
+.walls .container {
+  position: relative;
+}
+.walls .container::after {
+  content: "";
+  position: absolute;
+  left: -75px;
+  top: 0;
+  bottom: 0;
+  right: -75px;
+  width: calc(100% + 150px); /* Учитываем ширину отступов с обеих сторон */
+  outline: 2px dashed rgb(110, 114, 132);
+}
+.walls__title {
+  color: rgb(54, 56, 63);
+  font-size: 31px;
+  font-weight: 700;
+  line-height: 38px;
+  padding-bottom: 20px;
+}
+.walls__img {
+  width: 240px;
+  height: 340px;
+}
+
+.carousel {
+  position: relative;
+}
+.carousel__container {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.carousel__items {
+  position: relative;
+  display: flex;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  transition: transform 0.5s ease-in-out;
+}
+.carousel__item {
+  flex: 0 0 280px;
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.carousel__item:hover .carousel__description {
+  color: #0a4ecb;
+}
+.carousel__btn-prev, .carousel__btn-next {
+  z-index: 1;
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  border: 1px solid rgb(222, 223, 231);
+  border-radius: 50%;
+}
+.carousel__btn-prev:hover, .carousel__btn-next:hover {
+  opacity: 0.7;
+}
+.carousel__btn-next {
+  top: 50%;
+  right: -75px;
+  transform: translateY(-50%);
+}
+.carousel__btn-prev {
+  top: 50%;
+  left: -75px;
+  transform: translateY(-50%);
+}
+.carousel__arrow-prev {
+  color: rgb(240, 71, 22);
+  transform: rotate(90deg);
+}
+.carousel__arrow-next {
+  color: rgb(240, 71, 22);
+  transform: rotate(-90deg);
+}
+.carousel__description {
+  color: rgb(54, 56, 63);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  padding-top: 10px;
+}
+.carousel__buy {
+  display: flex;
+  padding-top: 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+.carousel__price {
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 26px;
+}
+.carousel__btn-buy {
+  background: #fff;
+  border: none;
+  border: 1px solid rgb(222, 223, 231);
+  border-radius: 12px;
+  padding: 15px;
+}
+
+@media (max-width: 1400px) {
+  .walls .container::after {
+    display: none;
+  }
+  .walls .carousel__btn-next {
+    right: -25px;
+  }
+  .walls .carousel__btn-prev {
+    left: -25px;
+  }
+}
+@media (max-width: 1250px) {
   .header .header-bottom .catalog .catalog-menu-sub-sub {
     max-width: 370px;
     padding: 35px 20px 0 20px;
@@ -1675,6 +1806,15 @@ button.swiper-pagination-bullet {
   .banner__elements {
     justify-content: center;
     flex-direction: row;
+  }
+  .walls .container::after {
+    display: none;
+  }
+  .walls .carousel__btn-next {
+    right: 0px;
+  }
+  .walls .carousel__btn-prev {
+    left: 0px;
   }
 }
 @media (min-width: 992px) {
@@ -1821,8 +1961,7 @@ button.swiper-pagination-bullet {
     display: block;
     font-size: 15px;
     line-height: 24px;
-    padding-top: 10px;
-    padding-bottom: 30px;
+    padding: 10px;
   }
   .banner__items {
     display: block;
@@ -1866,5 +2005,8 @@ button.swiper-pagination-bullet {
   .banner .swiper-pagination-fraction {
     left: 50%;
     transform: translateX(-50%);
+  }
+  .walls .carousel__item {
+    flex: 1 0 260px;
   }
 }

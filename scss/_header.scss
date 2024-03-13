@@ -1,4 +1,5 @@
 .header {
+  background-color: #fff;
   &::before {
     content: "";
     position: absolute;
@@ -309,7 +310,13 @@
     &__catalogs {
       padding-left: 30px;
     }
-
+    &__link,
+    &__link-discount {
+      transition: all 1s ease;
+      &:hover {
+        opacity: 0.9;
+      }
+    }
     .catalog {
       position: relative;
       padding-right: 16px;
@@ -341,7 +348,7 @@
             content: "";
             position: absolute;
             left: 0;
-            top: 4px;
+            top: 6px;
             width: 100%;
             height: 1px;
             background-color: rgb(255, 255, 255);
@@ -350,7 +357,7 @@
             content: "";
             position: absolute;
             left: 0;
-            top: 2px;
+            top: 3px;
             width: 100%;
             height: 1px;
             background-color: rgb(255, 255, 255);

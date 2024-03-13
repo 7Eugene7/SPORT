@@ -15,6 +15,9 @@ const catalogMenuSubLink = document.querySelectorAll(".catalog-menu-sub__link");
 const subSubMenu = document.querySelector(".catalog-menu-sub-sub");
 const closeSubSubMenu = document.querySelector(".catalog-menu-sub-sub__btn");
 const btnSubMenu = document.querySelector(".catalog-menu-sub__btn");
+const caruselWallsItems = document.querySelector(".carusel__items");
+const caruselWallsBtnPrev = document.querySelector(".carusel__btn-prev");
+const caruselWallsBtnNext = document.querySelector(".carusel__btn-next");
 
 //----click burger and add classes to burger and burger menu
 burger.addEventListener("click", function () {
@@ -86,4 +89,35 @@ const swiper = new Swiper(".swiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+});
+
+//------------CARUSEL WALLS----------
+let currentIndex = 0;
+
+function showSlides() {
+  const carousel = document.querySelector(".carousel__items");
+  carousel.style.transform = `translateX(${-currentIndex * 260}px)`; // Сдвиг на 1 элемент (20%)
+}
+
+function nextSlide() {
+  const totalItems = document.querySelectorAll(".carousel__item").length;
+  currentIndex = (currentIndex + 1) % totalItems;
+  showSlides();
+}
+
+function prevSlide() {
+  const totalItems = document.querySelectorAll(".carousel__item").length;
+  currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+  showSlides();
+}
+
+const carouselContainer = document.querySelector(".carousel__container");
+const hammer = new Hammer(carouselContainer);
+
+hammer.on("swipeleft", function () {
+  nextSlide();
+});
+
+hammer.on("swiperight", function () {
+  prevSlide();
 });
