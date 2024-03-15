@@ -1,5 +1,6 @@
-.walls {
-  padding-top: 60px;
+.complexes {
+  overflow: hidden;
+  padding-top: 30px;
   .container {
     position: relative;
     &::after {
@@ -9,23 +10,16 @@
       top: 0;
       bottom: 0;
       right: -75px;
-      width: calc(100% + 150px); /* Учитываем ширину отступов с обеих сторон */
-
+      width: calc(100% + 150px);
       outline: 2px dashed rgb(110, 114, 132);
     }
   }
-
   &__title {
-    padding-left: 15px;
     color: rgb(54, 56, 63);
     font-size: 31px;
     font-weight: 700;
     line-height: 38px;
     padding-bottom: 20px;
-  }
-
-  &__img {
-    width: 240px;
-    height: 340px;
+    padding-left: 15px;
   }
 }

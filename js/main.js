@@ -121,3 +121,68 @@ hammer.on("swipeleft", function () {
 hammer.on("swiperight", function () {
   prevSlide();
 });
+
+//------CAROUSEL COMPLEXSES--------------
+let currentComplexes = 0;
+
+function showSlidesComlexes() {
+  const carousel = document.querySelector(".carousel-items");
+  carousel.style.transform = `translateX(${-currentComplexes * 280}px)`; // Сдвиг на 1 элемент (20%)
+}
+
+function nextSlideComplexes() {
+  const totalItems = document.querySelectorAll(".carousel-item").length;
+  currentComplexes = (currentComplexes + 1) % totalItems;
+  showSlidesComlexes();
+}
+
+function prevSlideComlexes() {
+  const totalItems = document.querySelectorAll(".carousel-item").length;
+  currentComplexes = (currentComplexes - 1 + totalItems) % totalItems;
+  showSlidesComlexes();
+}
+
+const carouselContainerComplexes = document.querySelector(
+  ".carousel-container"
+);
+const hammerComplexes = new Hammer(carouselContainerComplexes);
+
+hammerComplexes.on("swipeleft", function () {
+  nextSlideComplexes();
+});
+
+hammerComplexes.on("swiperight", function () {
+  prevSlideComlexes();
+});
+//------CAROUSEL WEIGHTLIFTING--------------
+let currentWeigthLifting = 0;
+
+function showSlidesWeigthLifting() {
+  const carousel = document.querySelector(".weightlifting-items");
+  carousel.style.transform = `translateX(${-currentWeigthLifting * 280}px)`; // Сдвиг на 1 элемент (20%)
+}
+
+function nextSlideWeigthLifting() {
+  const totalItems = document.querySelectorAll(".weightlifting-item").length;
+  currentWeigthLifting = (currentWeigthLifting + 1) % totalItems;
+  showSlidesWeigthLifting();
+}
+
+function prevSlideWeightlifting() {
+  const totalItems = document.querySelectorAll(".weightlifting-item").length;
+  currentWeigthLifting = (currentWeigthLifting - 1 + totalItems) % totalItems;
+  showSlidesWeigthLifting();
+}
+
+const carouselContainerWeigthLifting = document.querySelector(
+  ".weightlifting-container"
+);
+const hammerWeigthLifting = new Hammer(carouselContainerWeigthLifting);
+
+hammerWeigthLifting.on("swipeleft", function () {
+  nextSlideWeigthLifting();
+});
+
+hammerWeigthLifting.on("swiperight", function () {
+  prevSlideWeightlifting();
+});

@@ -14,6 +14,20 @@
       }
     }
   }
+  .weightlifting {
+    .container {
+      &::after {
+        display: none;
+      }
+    }
+  }
+  .complexes {
+    .container {
+      &::after {
+        display: none;
+      }
+    }
+  }
 }
 @media (max-width: 1250px) {
   .header {
@@ -275,10 +289,23 @@
     }
   }
   .walls {
+    padding-top: 30px;
     .carousel {
       &__item {
         flex: 1 0 260px;
       }
     }
+  }
+  .weightlifting {
+    padding-top: 0;
+  }
+  .carousel {
+    &__btn-prev,
+    &__btn-next {
+      display: none;
+    }
+  }
+  .catalogs {
+    padding-top: 30px;
   }
 }

@@ -1,0 +1,56 @@
+.catalogs {
+  .container {
+  }
+  padding-top: 60px;
+  &__title {
+    color: rgb(54, 56, 63);
+    font-size: 31px;
+    font-weight: 700;
+    line-height: 38px;
+    padding-bottom: 20px;
+  }
+
+  &__items {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__item {
+    flex: 0 1 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 40px 85px;
+    overflow: hidden;
+    box-sizing: border-box;
+    &:hover {
+      box-shadow: 0px 15px 25px 0px rgba(48, 63, 115, 0.15);
+      cursor: pointer;
+    }
+  }
+  &__item:hover &__link {
+    color: #0a4ecb;
+  }
+  &__img {
+    img {
+      max-width: 115px;
+      height: 115px;
+      object-fit: contain;
+    }
+  }
+
+  &__link {
+    padding-top: 15px;
+    color: rgb(54, 56, 63);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 21px;
+    white-space: nowrap;
+  }
+}
+.container {
+}
