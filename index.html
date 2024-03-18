@@ -640,9 +640,7 @@
           <div class="banner__items">
             <div class="banner__item">
               <div class="swiper">
-                <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
-                  <!-- Slides -->
                   <div class="swiper-slide">
                     <div class="banner__block">
                       <div class="banner__img">
@@ -723,10 +721,7 @@
                   </div>
                   ...
                 </div>
-                <!-- If we need pagination -->
                 <div class="swiper-pagination"></div>
-
-                <!-- If we need navigation buttons -->
                 <div class="swiper-buttons">
                   <div class="swiper-button-prev"></div>
                   <div class="swiper-button-next"></div>
@@ -847,12 +842,12 @@
                 </div>
               </div>
             </div>
-            <button class="carousel__btn-prev" onclick="prevSlide()">
+            <button class="carousel__btn-prev" onclick="prevSlideWalls()">
               <span class="material-symbols-outlined carousel__arrow-prev">
                 keyboard_arrow_down
               </span>
             </button>
-            <button class="carousel__btn-next" onclick="nextSlide()">
+            <button class="carousel__btn-next" onclick="nextSlideWalls()">
               <span class="material-symbols-outlined carousel__arrow-next">
                 keyboard_arrow_down
               </span>
@@ -1052,7 +1047,7 @@
             </button>
             <button
               class="carousel__btn-next"
-              onclick="nextSlideWeightlifting()"
+              onclick="nextSlideWeigthLifting()"
             >
               <span class="material-symbols-outlined carousel__arrow-next">
                 keyboard_arrow_down
@@ -1112,6 +1107,102 @@
                 <img src="img/catalogs/8.png" alt="8" />
               </div>
               <a class="catalogs__link"> Весь каталог </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about">
+        <div class="container">
+          <h2 class="about__title">О компании</h2>
+          <div class="about__description">
+            <p class="about__text">
+              Компания «Sportova» специализируется на продаже шведских стенок,
+              детских площадок и тренажеров. Мы являемся официальными дилерами
+              ведущих производителей шведских стенок и детских площадок.
+            </p>
+            <a href="#" class="about__link"
+              >Подробнее
+              <span class="material-symbols-outlined about__arrow">
+                keyboard_arrow_down
+              </span>
+            </a>
+          </div>
+          <div class="about__items items-about">
+            <div class="items-about__item">
+              <div class="items-about__img">
+                <img src="img/about/1.png" alt="1" />
+                <p class="items-about__description">
+                  Выставочный зал на 450 кв.м
+                </p>
+              </div>
+            </div>
+            <div class="items-about__item">
+              <div class="items-about__img">
+                <img src="img/about/2.png" alt="2" />
+                <p class="items-about__description">
+                  90% товара в наличии на складе
+                </p>
+              </div>
+            </div>
+            <div class="items-about__item">
+              <div class="items-about__img">
+                <img src="img/about/3.png" alt="3" />
+                <p class="items-about__description">
+                  90% товара в наличии на складе
+                </p>
+              </div>
+            </div>
+            <div class="items-about__item">
+              <div class="items-about__img">
+                <img src="img/about/4.png" alt="4" />
+                <p class="items-about__description">
+                  Отправляем в регионы с оплатой при получении
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="about__elements">
+            <div class="about__element">
+              <div class="slider-container">
+                <div class="slider">
+                  <div class="slide active">
+                    <img src="img/about/slide1.jpg" alt="Slide 1" />
+                  </div>
+                  <div class="slide">
+                    <img src="img/about/slide2.webp" alt="Slide 2" />
+                  </div>
+                  <div class="slide">
+                    <img src="img/about/slide3.webp" alt="Slide 3" />
+                  </div>
+                  <div class="slide">
+                    <img src="img/about/slide4.webp" alt="Slide 3" />
+                  </div>
+                </div>
+                <button class="prev" onclick="prevSlide()">
+                  <span class="material-symbols-outlined slider-arrow-prev">
+                    keyboard_arrow_down
+                  </span>
+                </button>
+                <button class="next" onclick="nextSlide()">
+                  <span class="material-symbols-outlined slider-arrow-next">
+                    keyboard_arrow_down
+                  </span>
+                </button>
+                <div class="dots">
+                  <span class="dot" onclick="currentSlide(1)">
+                    <img src="img/about/slide1.jpg" alt="Slide 1"
+                  /></span>
+                  <span class="dot" onclick="currentSlide(2)">
+                    <img src="img/about/slide2.webp" alt="Slide 2"
+                  /></span>
+                  <span class="dot" onclick="currentSlide(3)">
+                    <img src="img/about/slide3.webp" alt="Slide 3"
+                  /></span>
+                  <span class="dot" onclick="currentSlide(4)">
+                    <img src="img/about/slide4.webp" alt="Slide 3"
+                  /></span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
