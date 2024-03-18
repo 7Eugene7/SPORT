@@ -94,32 +94,34 @@ const swiper = new Swiper(".swiper", {
 //------------CARUSEL WALLS----------
 let currentIndex = 0;
 
-function showSlides() {
+function showSlidesWalls() {
   const carousel = document.querySelector(".carousel__items");
   carousel.style.transform = `translateX(${-currentIndex * 260}px)`; // Сдвиг на 1 элемент (20%)
 }
 
-function nextSlide() {
+function nextSlideWalls() {
   const totalItems = document.querySelectorAll(".carousel__item").length;
   currentIndex = (currentIndex + 1) % totalItems;
-  showSlides();
+  showSlidesWalls();
 }
 
-function prevSlide() {
+function prevSlideWalls() {
   const totalItems = document.querySelectorAll(".carousel__item").length;
   currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-  showSlides();
+  showSlidesWalls();
 }
 
 const carouselContainer = document.querySelector(".carousel__container");
 const hammer = new Hammer(carouselContainer);
 
 hammer.on("swipeleft", function () {
-  nextSlide();
+  nextSlideWalls();
+  console.log("hello");
 });
 
 hammer.on("swiperight", function () {
-  prevSlide();
+  prevSlideWalls();
+  console.log("hello");
 });
 
 //------CAROUSEL COMPLEXSES--------------
@@ -186,3 +188,67 @@ hammerWeigthLifting.on("swipeleft", function () {
 hammerWeigthLifting.on("swiperight", function () {
   prevSlideWeightlifting();
 });
+
+//----SWIPER FOR ABOUT-----
+let slideIndex = 1;
+let touchStartX = 0;
+let touchEndX = 0;
+
+showSlides(slideIndex);
+
+function nextSlide() {
+  showSlides((slideIndex += 1));
+}
+
+function prevSlide() {
+  showSlides((slideIndex -= 1));
+}
+
+function currentSlide(n) {
+  showSlides((slideIndex = n));
+}
+
+function showSlides(n) {
+  let i;
+  const slides = document.getElementsByClassName("slide");
+  const dots = document.getElementsByClassName("dot");
+
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
+}
+
+function handleTouchStart(event) {
+  touchStartX = event.touches[0].clientX;
+}
+
+function handleTouchEnd(event) {
+  touchEndX = event.changedTouches[0].clientX;
+  handleGesture();
+}
+
+function handleGesture() {
+  if (touchEndX < touchStartX) {
+    nextSlide();
+  } else if (touchEndX > touchStartX) {
+    prevSlide();
+  }
+}
+
+const slider = document.querySelector(".slider-container");
+slider.addEventListener("touchstart", handleTouchStart, false);
+slider.addEventListener("touchend", handleTouchEnd, false);

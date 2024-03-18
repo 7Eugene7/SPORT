@@ -19,9 +19,9 @@
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
+    cursor: pointer;
     &:hover {
       box-shadow: 0px 15px 25px 0px rgba(48, 63, 115, 0.15);
-      cursor: pointer;
     }
   }
   &__item:hover &__description {
