@@ -1,4 +1,7 @@
 .about {
+  .container {
+    outline: 2px dashed rgb(110, 114, 132);
+  }
   padding-top: 90px;
   &__title {
     color: rgb(54, 56, 63);
@@ -40,13 +43,89 @@
   &__element {
     flex: 0 1 50%;
   }
-}
+  &__element:nth-child(2) {
+    background-color: #fff;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+  &__information {
+    padding: 30px 30px 55px 60px;
+  }
 
+  &__list {
+    position: relative;
+    color: rgb(110, 114, 132);
+    font-size: 15px;
+    line-height: 24px;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background-color: #f04716;
+      left: -15px;
+      border-radius: 50%;
+    }
+    &:not(:first-child) {
+      padding-top: 20px;
+    }
+    &:first-child {
+      &:after {
+        top: 5px;
+      }
+    }
+    &:nth-child(2),
+    &:nth-child(3) {
+      &::after {
+        top: 25px;
+      }
+    }
+    &:nth-child(4) {
+      &::after {
+        top: 50px;
+      }
+    }
+    &:last-child {
+      &:after {
+        bottom: 10px;
+      }
+    }
+  }
+}
+.specifics-about {
+  display: none;
+  padding: 0 20px 0 20px;
+  &__information {
+    padding-bottom: 15px;
+  }
+  &__link {
+    color: #0a4ecb;
+    font-size: 15px;
+    line-height: 24px;
+  }
+  &__list {
+    position: relative;
+    padding-top: 20px;
+    color: rgb(110, 114, 132);
+    font-size: 15px;
+    line-height: 24px;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background-color: #0a4ecb;
+      left: -15px;
+      border-radius: 50%;
+      top: 25px;
+    }
+  }
+}
 .items-about {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   &__item {
     padding: 50px 20px 50px 30px;
     background-color: #fff;

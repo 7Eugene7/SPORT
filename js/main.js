@@ -1,4 +1,5 @@
 const body = document.querySelector("body");
+const content = document.querySelector(".content");
 const burger = document.querySelector(".header-center__burger");
 const burgerMenu = document.querySelector(".header-center-mobile");
 const arrowCatalog = document.querySelector(".catalog__btn");
@@ -29,6 +30,19 @@ burger.addEventListener("click", function () {
 //click arrow Catalog
 arrowCatalog.addEventListener("click", function () {
   catalog.classList.toggle("open");
+});
+//change background-color for body
+catalog.addEventListener("mouseover", function () {
+  if (window.innerWidth >= 992) {
+    content.style.backgroundColor = "rgb(29, 30, 34)";
+    content.style.opacity = 0.55;
+  }
+});
+catalog.addEventListener("mouseout", function () {
+  if (window.innerWidth >= 992) {
+    content.style.backgroundColor = "";
+    content.style.opacity = 1;
+  }
 });
 //open sub-menu
 

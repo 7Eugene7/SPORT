@@ -538,7 +538,9 @@
         }
       }
     }
-
+    .catalog:hover body {
+      background-color: red;
+    }
     .catalog.open .catalog__menu {
       visibility: visible;
     }

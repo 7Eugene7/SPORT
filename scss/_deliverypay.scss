@@ -1,0 +1,39 @@
+.deliverypay {
+  padding-top: 60px;
+  .container {
+    outline: 2px dashed rgb(110, 114, 132);
+    background-color: #fff;
+  }
+
+  &__items {
+    display: flex;
+    gap: 20px 60px;
+    padding: 90px 0 100px 100px;
+  }
+
+  &__item {
+    flex: 0 1 50%;
+  }
+
+  &__title {
+    color: rgb(29, 30, 34);
+    font-size: 31px;
+    font-weight: 700;
+    line-height: 38px;
+  }
+
+  &__text {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    color: rgb(54, 56, 63);
+    padding-top: 20px;
+  }
+
+  &__link {
+    color: rgb(71, 136, 255);
+    font-size: 15px;
+    padding-top: 20px;
+    display: inline-block;
+  }
+}
